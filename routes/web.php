@@ -15,31 +15,32 @@ use Illuminate\Support\Facades\Mail;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return redirect()->route('client_homepage');
 });
 
-Route::get('send-mail', function () {
+//Route::get('send-mail', function () {
    
-    $details = [
-        'title' => 'Mail from ItSolutionStuff.com',
-        'body' => 'This is for testing email using smtp'
-    ];
+    //$details = [
+    //    'title' => 'Mail from ItSolutionStuff.com',
+     //   'body' => 'This is for testing email using smtp'
+   // ];
    
-    \Mail::to('spiralsmoke903@gmail.com')->send(new \App\Mail\MyTestMail($details));
+  //  \Mail::to('spiralsmoke903@gmail.com')->send(new \App\Mail\MyTestMail($details));
    
-    dd("Email is Sent.");
-});
+    //dd("Email is Sent.");
+//});
+
 Route::post ('send',[App\Http\Controllers\ClienthomepageController::class,'send' ])->name('send.email');
 ///<!Homepage and admin Registration!>///
 Route::get('/Tentacit/Home',[App\Http\Controllers\ClienthomepageController::class,'index' ])->name('client_homepage');
-Route::get('/Tentacit/Home/About Us',[App\Http\Controllers\ClienthomepageController::class,'info' ])->name('client_aboutusinfo');
-Route::get('/Contact',[App\Http\Controllers\ClienthomepageController::class,'contact' ])->name('client_contactinfo');
+Route::get('/Tentacit/About Us',[App\Http\Controllers\ClienthomepageController::class,'info' ])->name('client_aboutusinfo');
+Route::get('/Tentacit/Contact',[App\Http\Controllers\ClienthomepageController::class,'contact' ])->name('client_contactinfo');
 Route::post('/sent',[App\Http\Controllers\ClienthomepageController::class,'prospect' ])->name('submit_message');
 ///<!END OF ROUTE GROUP!>///   
 
 ///<!Music Library!>///
-Route::get('/Tentacit/Music-Library/page',[App\Http\Controllers\ArtistController::class,'show_musiclist' ])->name('client_musiclistingshowdata');
-Route::get('/All-Artist',[App\Http\Controllers\ArtistController::class,'show_artists'])->name('client_memberlist');
+Route::get('/Tentacit/Music-Library',[App\Http\Controllers\ArtistController::class,'show_musiclist' ])->name('client_musiclistingshowdata');
+Route::get('/Tentacit//All-Artist',[App\Http\Controllers\ArtistController::class,'show_artists'])->name('client_memberlist');
 Route::get('/Music-Library/Play',[App\Http\Controllers\ArtistController::class,'play_song'])->name('client_play');
 ///<!END OF ROUTE GROUP!>///  
 

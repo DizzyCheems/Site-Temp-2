@@ -13,7 +13,7 @@
 
     <title>Plot Listing Page</title>
 
-    <!-- Bootstrap core CSS -->
+    <!-- Bootstrap core CSS --> 
     <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
 

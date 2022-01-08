@@ -109,10 +109,10 @@ body {
                                     <a href="#"> 
                                   </a>
                                 </h5>
-                                <p class="" style="text-align:center;"> Date Joined:
+                                <p class="date-joined-title" style="text-align:center;"> Joined:
                                 {{$artists['dateregistered']}}
                                 </p>  
-                                <p style="font-weight:bold; text-align:center; font-size:16px;"> 
+                                <p p class="artist-genre-title" > 
                                   {{$artists['genre']}} 
                                 </p>
                             </div>
